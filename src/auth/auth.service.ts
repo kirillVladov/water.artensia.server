@@ -28,7 +28,15 @@ export class AuthService {
             throw new UnauthorizedException('User whith this email isset in system')
 
         const salt = await genSalt(10)
-        const newUser = new this.UserModel( {email: dto.email, password: await hash(dto.password, salt)} )
+        
+        const newUser = new this.UserModel({
+            email: dto.email, 
+            password: await hash(dto.password, salt),
+            phone: dto.phone,
+            name: dto.name,
+            address:dto.address
+        })
+
         const user = await newUser.save()
         const tokens = await this.issueTokenPair(String(user._id))
 

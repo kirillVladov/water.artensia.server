@@ -8,5 +8,14 @@ export class UserModel extends TimeStamps {
     email: string
 
     @prop()
+    name: string
+
+    @prop()
+    address: string
+
+    @prop()
+    phone: string
+
+    @prop()
     password: string
 }

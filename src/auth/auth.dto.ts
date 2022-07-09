@@ -10,4 +10,13 @@ export class AuthDto {
 
     @IsString()
     password: string
+
+    @IsString()
+    name: string
+
+    @IsString()
+    phone: string
+
+    @IsString()
+    address: string
 }
